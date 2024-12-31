@@ -1,0 +1,279 @@
+#include <stdio.h>
+#include <iostream>
+
+int main() {
+	int mike_score;
+	int join_score;
+	mike_score = 89;                                                                                        /*变量*/
+	join_score = 98;                                                                                        /*变量*/
+	mike_score = join_score;
+	join_score = 89;
+	printf("Join的成绩是%d。\n", join_score);
+	printf("Mike的成绩是%d。\n",mike_score);
+	
+	return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+	int int_1 = 80;
+	printf("变量值:%d\n",int_1);
+	char char_1 = 'A';
+	char char_2 = int_1;
+	printf("变量名：%c,%d\n", char_1);
+	printf("变量名：%c\n", char_2);
+	printf("变量值：%zu\n",sizeof(char));
+	float float_1 , float_2;
+	float_1 = 11.27;
+	float_2 = 11.12345678910;
+	printf("的数：%f\n",float_1);
+	printf("的数：%f\n", float_2);
+	double double_1 = 11.12345678910;
+	printf("数值：%.10f\n",float_2);
+	printf("数值：%.10f\n",double_1);
+	return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int result_1 = 2 + 10 / 8 * 3;
+	printf("Result_1: %d\n", result_1);
+	double result_2 = 2 + 10 / 8.0 * 3;
+	printf("Result_2: %f\n", result_2);
+	int a = 2;
+	int b = 65;
+	int c = 12;
+	double x1 = (- b + sqrt(pow(2, b) - 4 * a * c)) / (2 * a);
+	double x2 = ( - b - sqrt(pow(2, b) - 4 * a * c)) / (2 * a);
+	printf("求值根是: %f,%f\n", x1 , x2);
+	return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	const float PI = 3.1415;            //定义一个常量
+	int r = 2;                          //定义一个变量
+	int r2 = 8;                         //定义一个变量
+	double O = pow(r, 2) * PI;          //计算圆的面积
+	double O2 = pow(r2, 2) * PI;        //计算圆的面积D
+	printf("圆的面积是：%.2f , %.2f\n", O, O2); //输出圆的面积
+	return 0;                           
+}
+
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main() {
+	int a = 2;
+	int b = 8;
+	if (a > b)
+	{
+		printf("a - b = %d\n", a - b);
+	}else
+	{
+		printf("b - a = %d\n", b - a);
+	}
+	return 0;                     
+
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main() {
+	char user_type = 2;
+	double price = 180;
+	double money = {};
+	if (user_type == 1)
+	{
+		if (price > 100)
+		{
+			money = price * 0.95;
+		}
+		else
+		{
+			money = price;
+		}
+	}
+	else if (user_type == 2)
+	{
+		if (price > 200)
+		{
+			money = price * 0.9;
+		}
+		else
+		{
+			money = price * 0.97;
+		}
+	}
+	else
+	{
+		printf("无效用户\n");
+	}
+	printf("最终支付金额为；%.2lf\n", money);
+	return 0;                           
+}
+
+
+int main() {
+	int categgory = 2;
+	float price = 299.9;
+
+	switch (categgory) {
+	case 1:
+		if (price < 500)
+		{
+			printf("电子产品价格较低，无优惠。\n");
+		}
+		else if (price >= 500 && price <= 1000)
+		{
+			printf("电子产品可享受5%的优惠。\n");
+		}
+		else if (price > 1000)
+		{
+			printf("电子产品可享受10%的优惠。\n");
+		}
+		break;
+	case 2:
+		if (price < 200)
+		{
+			printf("服装价格较低，无优惠。\n");
+		}
+		else if (price >= 200 && price <= 500)
+		{
+			printf("服装可享受8%的优惠。\n");
+		}
+		else if (price > 500)
+		{
+			printf("服装可享受15%%的优惠。\n");
+		}
+		break;
+	default:
+		printf("无此类别商品。\n");
+		break;
+	}
+	return 0;                 
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main() {
+    int year = 2088;
+    year % 4 == 0;
+	year % 100 != 0;
+	year % 400 == 0;
+	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+		printf("%d 是闰年.\n", year);
+	}
+	else {
+		printf("%d 不是闰年.\n", year);
+	}
+    return 0;                           
+}
+
+
+int main() {
+	char  categgory = {};
+	float price = {};
+	printf("请输入商品类别(A-是电子产品//B-是服装产品)：");
+	scanf_s("%c", &categgory);
+	printf("请输入商品价格：");
+	scanf_s(" %f", &price);
+	switch (categgory) {
+	case 'A':
+		if (price < 500)
+		{
+			printf("电子产品价格较低，无优惠。\n");
+		}
+		else if (price >= 500 && price <= 1000)
+		{
+			printf("电子产品可享受5%%的优惠。\n");
+		}
+		else if (price > 1000)
+		{
+			printf("电子产品可享受10%%的优惠。\n");
+		}
+		break;
+	case 'B':
+		if (price < 200)
+		{
+			printf("服装价格较低，无优惠。\n");
+		}
+		else if (price >= 200 && price <= 500)
+		{
+			printf("服装可享受8%%的优惠。\n");
+		}
+		else if (price > 500)
+		{
+			printf("服装可享受15%%的优惠。\n");
+		}
+		break;
+	default:
+		printf("无此类别商品。\n");
+		break;
+	}
+	return 0;
+}
+
+
+int main() {
+	int A = 1;
+	int B = 0;
+	int C = 0;
+	while (A <= 100) {
+		A = A + 1;
+		if (A % 2 == 0) {
+			B = B + A;
+		}
+		A = A + 1;
+	}
+	printf("从1到100的偶数总和是%d\n", B);
+	A = 1;	
+	do
+	{
+		if (A % 2 == 0)	{
+			C = C + A;
+		}
+		A = A + 1;
+	} while (A <= 100);
+	printf("从1到100的偶数总和是%d\n", B);
+	return 0;
+}
+
+int main() {
+	for (int a = 1; a <= 50 ; a++)
+	{
+		if (a % 2 != 0) { 
+			continue;
+	     }
+		if (a % 3 == 0)
+		{
+			continue;
+		}
+		if (a > 40)
+		{
+			break;
+		}
+		printf("%d\n", a);
+	}
+	return 0;
+}
+
+int main()     #主函数
+return 0       #查看返回是否报错
+include <>   #代入该函数包
+if—else        #如果-- 输出  反之--输出
+switch          #基本和if一样就是好看点
+int               #整数
+float            #浮点数
+doudle        #精确浮点数
+while           #循环一直达到条件为止（这个逼函数容易把电脑搞炸，谨慎使用，使用时一定要加上结束专用条件）
+do while      #同上理
+for               #这个逼函数比上面有过之而无不及
